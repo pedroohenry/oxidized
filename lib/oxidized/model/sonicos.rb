@@ -46,6 +46,8 @@ class SonicOS < Oxidized::Model
   end
 
   cfg :ssh do
+    # SonicOS 7.3 secondary password prompt (see Issue #3730)
+    password /Password:/
     post_login 'no cli pager session'
     pre_logout 'exit'
   end
